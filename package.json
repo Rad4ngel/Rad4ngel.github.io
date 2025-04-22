@@ -1,0 +1,25 @@
+{
+  "name": "rad4ngel.github.io",
+  "version": "1.0.0",
+  "description": "My personal portfolio hosted on GH",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rad4ngel/Rad4ngel.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rad4ngel/Rad4ngel.github.io/issues"
+  },
+  "homepage": "https://github.com/Rad4ngel/Rad4ngel.github.io#readme",
+  "dependencies": {
+    "astro": "^5.7.4"
+  }
+}
