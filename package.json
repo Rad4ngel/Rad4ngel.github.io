@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/Rad4ngel/Rad4ngel.github.io#readme",
   "dependencies": {
-    "astro": "^5.7.4"
+    "astro": "^5.9.2"
   }
 }
