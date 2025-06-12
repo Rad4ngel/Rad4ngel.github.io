@@ -1,15 +1,70 @@
 ---
+import Hero from "../components/Hero.astro";
+import About from '../components/About.astro';
+import Portfolio from '../components/Portfolio.astro';
+import Services from '../components/Services.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 ---
+
 <DefaultLayout title="Rad4ngel">
   <div class="main-container">
-    <h1>Hola soy Rad</h1>
-    <h2>Me gusta hacer muchas cosas con codigo y modelos 3D</h2>
+    <Hero />
+    <About />
+    <Portfolio />
+    <Services />
+    <Contact />
+    <Footer />
+    <!-- <h1 class="floating-text" id="floatText">Rad4ngel</h1> -->
+
+    <!-- <h2>Me gusta hacer muchas cosas con codigo y modelos 3D</h2> -->
   </div>
+
+  <script>
+    const text = document.getElementById("floatText");
+    const maxOffset = 20;
+
+    let mouseX = 0,
+      mouseY = 0;
+    let animating = false;
+
+    document.addEventListener("mousemove", (e) => {
+      const { innerWidth, innerHeight } = window;
+      mouseX = (e.clientX / innerWidth - 0.5) * 2 * maxOffset;
+      mouseY = (e.clientY / innerHeight - 0.5) * 2 * maxOffset;
+
+      if (!animating) {
+        requestAnimationFrame(updatePosition);
+        animating = true;
+      }
+    });
+
+    function updatePosition() {
+      text.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+      animating = false;
+    }
+  </script>
 </DefaultLayout>
 
 <style>
   .main-container {
     margin: 0px 16px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  h1 {
+  }
+
+  .floating-text {
+    /* position: absolute; */
+    color: #fff;
+    font-size: 48px;
+    font-weight: bold;
+    pointer-events: none; /* No interfiere con clics */
+    transition: transform 0.1s ease-out;
+    mix-blend-mode: difference; /* Opcional: efecto visual */
   }
 </style>

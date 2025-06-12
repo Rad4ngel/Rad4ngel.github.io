@@ -1,4 +1,5 @@
 ---
+import Header from "../components/Header.astro";
 import Navbar from "../components/Navbar.astro";
 
 console.log("This runs in your terminal, not the browser!");
@@ -9,103 +10,25 @@ const { title } = Astro.props;
 <html lang="en">
     <head>
         <title>{title}</title>
+        <meta charset="UTF-8" />
     </head>
     <body>
-        <Navbar />
+        <Header />
+        <!-- <Navbar /> -->
         <slot />
     </body>
     <style is:global>
-        @font-face {
-            font-family: "IBMPlexMono";
-            src: url("/fonts/IBMPlexMono/IBMPlexMono-Thin.ttf") format("truetype");
-            font-weight: 100;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: "IBMPlexMono";
-            src: url("/fonts/IBMPlexMono/IBMPlexMono-ThinItalic.ttf") format("truetype");
-            font-weight: 100;
-            font-style: italic;
-        }
-        @font-face {
-            font-family: "IBMPlexMono";
-            src: url("/fonts/IBMPlexMono/IBMPlexMono-ExtraLight.ttf") format("truetype");
-            font-weight: 200;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: "IBMPlexMono";
-            src: url("/fonts/IBMPlexMono/IBMPlexMono-ExtraLightItalic.ttf") format("truetype");
-            font-weight: 200;
-            font-style: italic;
-        }
-        @font-face {
-            font-family: "IBMPlexMono";
-            src: url("/fonts/IBMPlexMono/IBMPlexMono-Light.ttf") format("truetype");
-            font-weight: 300;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: "IBMPlexMono";
-            src: url("/fonts/IBMPlexMono/IBMPlexMono-LightItalic.ttf") format("truetype");
-            font-weight: 300;
-            font-style: italic;
-        }
-        @font-face {
-            font-family: "IBMPlexMono";
-            src: url("/fonts/IBMPlexMono/IBMPlexMono-Regular.ttf") format("truetype");
-            font-weight: 400;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: "IBMPlexMono";
-            src: url("/fonts/IBMPlexMono/IBMPlexMono-Italic.ttf") format("truetype");
-            font-weight: 400;
-            font-style: italic;
-        }
-        @font-face {
-            font-family: "IBMPlexMono";
-            src: url("/fonts/IBMPlexMono/IBMPlexMono-Medium.ttf") format("truetype");
-            font-weight: 500;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: "IBMPlexMono";
-            src: url("/fonts/IBMPlexMono/IBMPlexMono-MediumItalic.ttf") format("truetype");
-            font-weight: 500;
-            font-style: italic;
-        }
-        @font-face {
-            font-family: "IBMPlexMono";
-            src: url("/fonts/IBMPlexMono/IBMPlexMono-SemiBold.ttf") format("truetype");
-            font-weight: 600;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: "IBMPlexMono";
-            src: url("/fonts/IBMPlexMono/IBMPlexMono-SemiBoldItalic.ttf") format("truetype");
-            font-weight: 600;
-            font-style: italic;
-        }
-        @font-face {
-            font-family: "IBMPlexMono";
-            src: url("/fonts/IBMPlexMono/IBMPlexMono-Bold.ttf") format("truetype");
-            font-weight: 600;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: "IBMPlexMono";
-            src: url("/fonts/IBMPlexMono/IBMPlexMono-BoldItalic.ttf") format("truetype");
-            font-weight: 600;
-            font-style: italic;
-        }
+        @import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+
         body {
-            font-family: "IBMPlexMono";
-            background-color: #010101;
+            font-family: "FiraCode", monospace;
+            background-color: #111;
             color: white;
             margin: 0px;
         }
-        h1 {
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* Ajusta según la altura del header */
         }
     </style>
 </html>
